@@ -64,6 +64,7 @@ public class BasicOpMode_LinearTest extends LinearOpMode {
         telemetry.addData("Status", "Initialized");
         telemetry.update();
 
+        /*
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
@@ -74,6 +75,8 @@ public class BasicOpMode_LinearTest extends LinearOpMode {
         // Reverse the motor that runs backwards when connected directly to the battery
         leftDrive.setDirection(DcMotor.Direction.FORWARD);
         rightDrive.setDirection(DcMotor.Direction.REVERSE);
+
+         */
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
@@ -105,12 +108,15 @@ public class BasicOpMode_LinearTest extends LinearOpMode {
             rightPower = -gamepad1.right_stick_y ;
 
             // Send calculated power to wheels
+         /*
             leftDrive.setPower(leftPower);
             rightDrive.setPower(rightPower);
-
+         */
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
+            telemetry.addData("A Button Pressed?",gamepad1.a);
+            telemetry.addData("X Button Pressed?", gamepad1.x);
             telemetry.update();
         }
     }
